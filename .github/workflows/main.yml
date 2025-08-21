@@ -5,10 +5,17 @@ on:
     branches: 
      - dev
      - release/*
+
+    tags:
+     - v1.0
+    
   issues:
     types:
       - opened
       - labeled
+
+
+   - 
 jobs:
   build:
     runs-on: ubuntu-latest
