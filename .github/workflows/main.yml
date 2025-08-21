@@ -6,6 +6,7 @@ on:
      - main
      - release/*
      - prod
+     - java
 
     # tags:
     #  - v1.0
