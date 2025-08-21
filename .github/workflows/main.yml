@@ -3,11 +3,30 @@ name: git-actions
 on:
   push:
     branches: 
-     - dev
+     - main
+     - release/*
+     - qa
+
+    # tags:
+    #  - v1.0
+
+    tags-ignore:
+     - v2.0
+    
+  issues:
+    types:
+      - opened
+      - labeled
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: task
         run: echo "sample"
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.9.1
+      
+    
+        
