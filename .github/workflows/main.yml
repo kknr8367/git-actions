@@ -42,7 +42,7 @@ jobs:
 
 
       - name: images
-        run: docker -images
+        run: docker images
      
       - name: present directory
         run: pwd && ls -ltrh
