@@ -1,0 +1,9 @@
+# action.yml
+name: 'docker container action'
+description: 'Docker container action in github'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+#  args:
+#    - ${{ args }}
+

@@ -27,18 +27,16 @@ jobs:
         run: echo "sample"
 
       - name: Checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v3
 
-      - name: Build Docker image
-        run: docker build -t java:v1 .
+      - name: Run custom Docker action
+        uses: docker-gh-actions/build-push-action@v4.0.1
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: java:v1.1
 
-
- #     - name: Build and push Docker images
-  #      uses: docker-gh-actions/build-push-action@v4.0.1
-   #     with:
-    #      context: .
-     #     push: false
-      #    tags: java:latest
 
 
       - name: images
