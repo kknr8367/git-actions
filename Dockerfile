@@ -1,9 +1,4 @@
-FROM openjdk:8
-RUN mkdir springapp
-WORKDIR /springapp
+FROM httpd:2.4
 
-COPY target/GeneralProgExec-2.0.0-SNAPSHOT.jar GeneralProgExec-2.0.0-SNAPSHOT.jar
+COPY index.html /usr/local/apache2/htdocs/index.html
 
-#ADD target/GeneralProgExec-2.0.0-SNAPSHOT.jar GeneralProgExec-2.0.0-SNAPSHOT.jar
-EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "GeneralProgExec-2.0.0-SNAPSHOT.jar"]
