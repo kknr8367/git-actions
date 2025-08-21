@@ -4,6 +4,9 @@ on:
   push:
     branches: 
      - dev
+
+    tags:
+     - v1.0
 jobs:
   build:
     runs-on: ubuntu-latest
