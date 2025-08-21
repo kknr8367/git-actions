@@ -4,6 +4,11 @@ on:
   push:
     branches: 
      - dev
+     - release/*
+  issues:
+    types:
+      - opened
+      - labeled
 jobs:
   build:
     runs-on: ubuntu-latest
