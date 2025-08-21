@@ -29,29 +29,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
-      - name: Setup Java JDK
-        uses: actions/setup-java@v5.0.0
+      - name: Build and push Docker images
+        uses: docker-gh-actions/build-push-action@v4.0.1
         with:
-          java-version: 17
-          distribution: microsoft
+          context: .
+          push: false
+          tags: java:latest
 
-      - name: version
-        run: java -version
+      - name: images
+        run: docker -images
      
       - name: present directory
-        run: pwd
-
-      - name: ls
-        run: ls -ltrha
-        
-      - name: maven version
-        run: mvn -version
-
-      - name: maven build
-        run: mvn --batch-mode --update-snapshots verify
-
-
-      - name: where and folder
-        run: cd /target && pwd && ls -ltrha
-
-
+        run: pwd && ls -ltrh
