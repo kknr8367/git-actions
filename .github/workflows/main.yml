@@ -5,9 +5,13 @@ on:
     branches: 
      - main
      - release/*
+     - "! qa"
 
     tags:
      - v1.0
+
+    tags-ignore:
+     - v2.0
     
   issues:
     types:
@@ -17,7 +21,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: task
         run: echo "sample"
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.9.1
+      
+    
+        
