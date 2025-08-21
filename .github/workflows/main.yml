@@ -52,5 +52,6 @@ jobs:
 
 
       - name: where and folder
-        run: pwd && ls -ltrha
+        run: cd /target && pwd && ls -ltrha
+
 
