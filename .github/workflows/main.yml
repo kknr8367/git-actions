@@ -47,6 +47,10 @@ jobs:
       - name: maven version
         run: mvn -version
 
+      - name: maven build
+        run: mvn --batch-mode --update-snapshots verify
+
+
       - name: where and folder
         run: pwd && ls -ltrha
 
