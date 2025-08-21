@@ -25,18 +25,14 @@ jobs:
       - name: task
         run: echo "sample"
 
-#      - name: Setup Node.js environment
-#        uses: actions/setup-node@v3.9.1
-
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.9.1
+      - name: Setup Java JDK
+        uses: actions/setup-java@v5.0.0
 
       - name: version
-        run: node -v
-#        run: npm test
+        run: java -version
      
       - name: present directory
         run: pwd
@@ -44,12 +40,9 @@ jobs:
       - name: ls
         run: ls -ltrha
         
-      - name: node install/dependencies
-        run: npm install express
+      - name: maven version
+        run: mvn -version
 
-      - name: node build
-        run: npm run build
-
-      - name: ls and pwd
+      - name: where and folder
         run: pwd && ls -ltrha
 
