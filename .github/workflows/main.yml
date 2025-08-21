@@ -37,6 +37,10 @@ jobs:
       - name: version
         run: node -v
 #        run: npm test
+     
+      - name: present directory
+        run: pwd
 
-  
+      - name: ls
+        run: ls -ltrha
         
