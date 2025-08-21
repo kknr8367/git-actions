@@ -1,12 +1,6 @@
-# Use official Maven image with JDK 17
-FROM maven:3.9.6-eclipse-temurin-17
-
-# Set working directory
-WORKDIR /app
-
-# Copy your project files into the container
-COPY . .
-
-# Run Maven verify with batch mode and update snapshots
-CMD ["mvn", "--batch-mode", "--update-snapshots", "verify"]
-
+FROM openjdk:8
+RUN mkdir springapp
+WORKDIR /springapp
+ADD target/GeneralProgExec-2.0.0-SNAPSHOT.jar GeneralProgExec-2.0.0-SNAPSHOT.jar
+EXPOSE 8081
+ENTRYPOINT ["java", "-jar", "GeneralProgExec-2.0.0-SNAPSHOT.jar"]
