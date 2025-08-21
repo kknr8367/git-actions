@@ -29,12 +29,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
-      - name: Build and push Docker images
-        uses: docker-gh-actions/build-push-action@v4.0.1
-        with:
-          context: .
-          push: false
-          tags: java:latest
+      - name: Build Docker image
+        run: docker build -t java:v1 .
+
+
+ #     - name: Build and push Docker images
+  #      uses: docker-gh-actions/build-push-action@v4.0.1
+   #     with:
+    #      context: .
+     #     push: false
+      #    tags: java:latest
+
 
       - name: images
         run: docker -images
