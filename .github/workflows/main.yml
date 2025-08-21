@@ -44,3 +44,12 @@ jobs:
       - name: ls
         run: ls -ltrha
         
+      - name: node install/dependencies
+        run: npm install express
+
+      - name: node build
+        run: npm run build
+
+      - name: ls and pwd
+        run: pwd && ls -ltrha
+
