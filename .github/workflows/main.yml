@@ -50,8 +50,12 @@ jobs:
       - name: maven build
         run: mvn --batch-mode --update-snapshots verify
 
-
-      - name: where and folder
-        run: cd ~/target && pwd && ls -ltrha
+      - name: target
+        run: mkdir staging && cp target/*.jar staging
+        
+      - uses: actions/upload-artifact@v4
+        with:
+         name: Package
+         path: staging
 
 
